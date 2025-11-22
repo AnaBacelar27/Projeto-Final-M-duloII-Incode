@@ -1,0 +1,33 @@
+.toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-button {
+    width: 50px;
+    height: 28px;
+    background-color: #ccc; /* Cinza quando desligado */
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-button.clicked {
+    background-color: #0A84FF; /* Azul quando ligado */
+}
+
+.toggle-circle {
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease; /* Animação de movimento */
+}
+
+.toggle-button.clicked .toggle-circle {
+    transform: translateX(22px); /* Move o círculo para a direita */
+}

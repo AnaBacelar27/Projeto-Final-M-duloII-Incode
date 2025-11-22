@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './styles/App.css'
 import Header from './components/Header'
 import ListaDeCursos from './components/ListaDeCursos'
+import PopPup1 from './components/PopPup1'
+import ButtonMoveColor from './components/ButtonMoveColor'
 
 function App() {
   const [cursos, setCursos] = useState([
@@ -28,10 +30,22 @@ function App() {
     },
   ])
 
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function abrirModal() {
+    setIsOpen(true);
+  }
+
+  function fecharModal() {
+    setIsOpen(false);
+  }
+
   return(
     <>
-      <Header /> 
+      <Header onAbrirModal={abrirModal} /> 
       <ListaDeCursos cursos={cursos}/>
+      <PopPup1 isOpen={modalIsOpen} onClose={fecharModal} />
+     
     </>
   )
 }

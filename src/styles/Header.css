@@ -12,13 +12,12 @@
 
 
 .btn-criar-curso{
-  background-color: #0e6fff;
+  background-color: #0A84FF;
   color: white;
   padding: 10px 20px;
   border-radius: 7px;
   font-size: 14px;
 }
 .btn-criar-curso:hover{
-   background-color: #0b4193;
+   opacity: 0.9;
 }
-
