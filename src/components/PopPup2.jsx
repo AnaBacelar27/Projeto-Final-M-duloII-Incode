@@ -1,9 +1,7 @@
 import { useState } from "react";
-import "../styles/PopPup.css";
+import "../styles/PopPup2.css";
 import ButtonMoveColor from "./ButtonMoveColor";
-
-
-function PopPup1({ isOpen, onClose, onAdicionarCurso }) {
+function PopPup1({ isOpen, onClose, onHandleCriarCurso }) {
     const [titulo, setTitulo] = useState('');
     const [descricao, setDescricao] = useState('');
     const [status, setStatus] = useState(true);
@@ -12,12 +10,12 @@ function PopPup1({ isOpen, onClose, onAdicionarCurso }) {
         return null;
     } 
 
-     function handleCriarCurso() {
+    function handleCriarCurso() {
         if (!titulo || !descricao) {
             alert("Por favor, preencha o nome e a descrição do curso.");
             return;
         }
-        onAdicionarCurso({ titulo, descricao, status });
+        onHandleCriarCurso({ titulo, descricao, status });
         // Limpa os campos após adicionar
         setTitulo('');
         setDescricao('');
@@ -29,7 +27,7 @@ function PopPup1({ isOpen, onClose, onAdicionarCurso }) {
             <div className="modal-overlay" onClick={onClose}></div>
             <div className="modal-content">
                 <header className="modal-header">
-                    <h4>Criar novo curso</h4>
+                    <h4>Editar curso</h4>
                     <button onClick={onClose} className="close-button">&times;</button>
                 </header>
                 <div className="modal-body">
@@ -59,8 +57,9 @@ function PopPup1({ isOpen, onClose, onAdicionarCurso }) {
                     </div>
 
                     <div className="button-container">
+                        <button onClick={handleCriarCurso} className="edit-curso">Atualizar curso</button>
                         <button onClick={onClose} className="cancell-button">Cancelar</button>
-                        <button onClick={handleCriarCurso} className="open-curso">Criar Curso</button>
+                        
                     </div>
                 </div>
             </div>

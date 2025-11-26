@@ -2,7 +2,6 @@ import { EditIcon, EyeIcon } from 'lucide-react'
 import "../styles/ListaDeCursos.css"
 
 const ListaDeCursos = ({cursos}) => {
-
    return(
       <ul>
         {cursos.map((curso) => (
@@ -18,6 +17,7 @@ const ListaDeCursos = ({cursos}) => {
                <p className='p-li'>{curso.descricao}</p>
                <p className='p-li'>{curso.numAulas} aulas</p>
             </section>
+            
 
             <section className="opcoes">
                <button> <EditIcon/> </button>

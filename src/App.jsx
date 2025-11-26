@@ -4,9 +4,10 @@ import Header from './components/Header'
 import ListaDeCursos from './components/ListaDeCursos'
 import PopPup1 from './components/PopPup1'
 import ButtonMoveColor from './components/ButtonMoveColor'
+import PopPup2 from './components/PopPup2'
 
 function App() {
-  const [cursos, setCursos] = useState([
+  const [cursos] = useState([
     {
       id: 1,
       titulo: "Fundamentos de react",
@@ -45,7 +46,7 @@ function App() {
       <Header onAbrirModal={abrirModal} /> 
       <ListaDeCursos cursos={cursos}/>
       <PopPup1 isOpen={modalIsOpen} onClose={fecharModal} />
-     
+      <PopPup2 />
     </>
   )
 }
