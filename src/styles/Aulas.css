@@ -1,0 +1,119 @@
+.box {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+#btnVoltar {
+  display: flex;
+  align-items: center;
+  border: none;
+  color: #9ca3af;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-bottom: 10px;
+}
+
+#btnVoltar:hover {
+  color: #d1d5db;
+}
+
+.infoCurso {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: #1a1c1e;
+  border-radius: 10px;
+  padding: 25px 30px;
+  margin-bottom: 20px;
+}
+
+.titulos {
+  margin: 0;
+  font-weight: 600;
+}
+
+.txt_btn {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  background-color: #8825eb;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.txt {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.Aulas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#btnAdd {
+  width: 150px;
+  height: 40px;
+  background-color: #3b82f6;
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+#btnAdd:hover {
+  background-color: #2563eb;
+}
+
+.itens {
+  display: flex;
+  height: 100px;
+  background-color: #1a1c1e;
+  padding: 18px 20px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.itens:hover {
+  background-color: #232527;
+}
+
+.itens p {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.itens div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.opc button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  font-size: 18px;
+  margin-left: 12px;
+  transition: 0.2s;
+}
+
+.opc button:hover {
+  color: #2563eb;
+}
