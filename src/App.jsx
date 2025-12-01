@@ -3,8 +3,6 @@ import './styles/App.css'
 import Header from './components/Header'
 import ListaDeCursos from './components/ListaDeCursos'
 import PopPup1 from './components/PopPup1'
-import ButtonMoveColor from './components/ButtonMoveColor'
-import PopPup2 from './components/PopPup2'
 
 function App() {
   const [cursos] = useState([
@@ -44,11 +42,12 @@ function App() {
   return(
     <>
       <Header onAbrirModal={abrirModal} /> 
-      <ListaDeCursos cursos={cursos}/>
+      <ListaDeCursos cursos={cursos} />
       <PopPup1 isOpen={modalIsOpen} onClose={fecharModal} />
-      <PopPup2 />
+      
+      
     </>
   )
 }
 
-export default App
+export default App;
