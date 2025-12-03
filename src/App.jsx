@@ -3,7 +3,6 @@ import './styles/App.css'
 import Header from './components/Header'
 import ListaDeCursos from './components/ListaDeCursos'
 import PopPup1 from './components/PopPup1'
-import ButtonMoveColor from './components/ButtonMoveColor'
 
 function App() {
   const [cursos, setCursos] = useState(() => {
@@ -58,11 +57,11 @@ function App() {
   function adicionarCurso(novoCurso) {
     const cursoComId = {
       ...novoCurso,
-      id: Date.now(), // Gera um ID único baseado no tempo
-      numAulas: 0, // O formulário não tem este campo, então iniciamos com 0
+      id: Date.now(), 
+      numAulas: 0, 
     };
     setCursos([...cursos, cursoComId]);
-    fecharModal(); // Fecha o modal após a criação do curso
+    fecharModal(); 
   }
 
   return(
@@ -75,4 +74,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

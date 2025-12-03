@@ -2,14 +2,15 @@ import { useState } from "react";
 import "../styles/PopPup.css";
 import ButtonMoveColor from "./ButtonMoveColor";
 
+
 function PopPup1({ isOpen, onClose, onAdicionarCurso }) {
-    const [titulo, setTitulo] = useState('');
-    const [descricao, setDescricao] = useState('');
-    const [status, setStatus] = useState(true);
-    
-    if (!isOpen) {
-        return null;
-    } 
+  const [titulo, setTitulo] = useState("");
+  const [descricao, setDescricao] = useState("");
+  const [status, setStatus] = useState(true);
+
+  if (!isOpen) {
+    return null;
+  }
 
     function handleCriarCurso() {
         if (!titulo || !descricao) {
@@ -45,22 +46,28 @@ function PopPup1({ isOpen, onClose, onAdicionarCurso }) {
                         onChange={(e) => setDescricao(e.target.value)}
                     ></textarea>
 
-                    <div className="status-toggle-container">
-                        <div>
-                            <p className="status-curso">status do curso</p>
-                            <p className="status-curso2">curso ativo e visível</p>
-                        </div>
-                        <div className="button-move"><ButtonMoveColor isClicked={status} setIsClicked={setStatus} /></div>
-                    </div>
-
-                    <div className="button-container">
-                        <button onClick={onClose} className="cancell-button">Cancelar</button>
-                        <button onClick={handleCriarCurso} className="open-curso">Criar Curso</button>
-                    </div>
-                </div>
+          <div className="status-toggle-container">
+            <div>
+              <p className="status-curso">status do curso</p>
+              <p className="status-curso2">curso ativo e visível</p>
             </div>
-        </>
-    );
+            <div className="button-move">
+              <ButtonMoveColor isClicked={status} setIsClicked={setStatus} />
+            </div>
+          </div>
+
+          <div className="button-container">
+            <button onClick={onClose} className="cancell-button">
+              Cancelar
+            </button>
+            <button onClick={handleCriarCurso} className="open-curso">
+              Criar Curso
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default PopPup1;
