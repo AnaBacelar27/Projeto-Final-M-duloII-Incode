@@ -17,10 +17,6 @@ function PopPup1({ isOpen, onClose, onAdicionarCurso }) {
             return;
         }
         onAdicionarCurso({ titulo, descricao, status });
-        // Limpa os campos após adicionar
-        setTitulo('');
-        setDescricao('');
-        setStatus(true);
     }
 
     return (

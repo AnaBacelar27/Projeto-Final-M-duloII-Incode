@@ -1,7 +1,7 @@
-import { EditIcon, EyeIcon } from 'lucide-react'
+import { EditIcon, Trash2 } from 'lucide-react'
 import "../styles/ListaDeCursos.css"
 
-const ListaDeCursos = ({cursos}) => {
+const ListaDeCursos = ({cursos, onApagarCurso}) => {
 
    return(
       <ul>
@@ -21,7 +21,7 @@ const ListaDeCursos = ({cursos}) => {
 
             <section className="opcoes">
                <button> <EditIcon/> </button>
-               <button> <EyeIcon /> </button>
+               <button onClick={() => onApagarCurso(curso.id)}> <Trash2 /> </button>
             </section>
 
             </li>
