@@ -12,48 +12,39 @@ function PopPup1({ isOpen, onClose, onAdicionarCurso }) {
     return null;
   }
 
-  function handleCriarCurso() {
-    if (!titulo || !descricao) {
-      alert("Por favor, preencha o nome e a descrição do curso.");
-      return;
-    } else {
-      console.log("Curso criado:", { titulo, descricao, status });
-      
+    function handleCriarCurso() {
+        if (!titulo || !descricao) {
+            alert("Por favor, preencha o nome e a descrição do curso.");
+            return;
+        }
+        onAdicionarCurso({ titulo, descricao, status });
     }
 
-   onAdicionarCurso({ titulo, descricao, status });
-    // Limpa os campos após adicionar
-    setTitulo("");
-    setDescricao("");
-    setStatus(true);
-  }
-  return (
-    <>
-      <div className="modal-overlay" onClick={onClose}></div>
-      <div className="modal-content">
-        <header className="modal-header">
-          <h4>Criar novo curso</h4>
-          <button onClick={onClose} className="close-button">
-            &times;
-          </button>
-        </header>
-        <div className="modal-body">
-          <p className="name-curso">Nome do curso</p>
-          <input
-            type="text"
-            className="input-curso"
-            placeholder="Ex:Fundamentos do React"
-            value={titulo}
-            onChange={(e) => setTitulo(e.target.value)}
-          />
-
-          <p className="description">Descrição</p>
-          <textarea
-            className="input-descreva"
-            placeholder="Descreva o conteúdo do curso"
-            value={descricao}
-            onChange={(e) => setDescricao(e.target.value)}
-          ></textarea>
+    return (
+        <>
+            <div className="modal-overlay" onClick={onClose}></div>
+            <div className="modal-content">
+                <header className="modal-header">
+                    <h4>Criar novo curso</h4>
+                    <button onClick={onClose} className="close-button">&times;</button>
+                </header>
+                <div className="modal-body">
+                    <p className="name-curso">Nome do curso</p>
+                    <input 
+                        type="text" 
+                        className="input-curso" 
+                        placeholder="Ex:Fundamentos do React"
+                        value={titulo}
+                        onChange={(e) => setTitulo(e.target.value)}
+                    />
+                    
+                    <p className="description">Descrição</p>
+                    <textarea 
+                        className="input-descreva" 
+                        placeholder="Descreva o conteúdo do curso"
+                        value={descricao}
+                        onChange={(e) => setDescricao(e.target.value)}
+                    ></textarea>
 
           <div className="status-toggle-container">
             <div>
