@@ -1,11 +1,11 @@
 import "../styles/Header.css"
 
-const Header = () => {
+const Header = ({ onAbrirModal }) => {
    return(
       <header className="header">
          
       <h1>Curso</h1>
-      <button className="btn-criar-curso">+ Criar curso</button>
+      <button onClick={onAbrirModal} className="btn-criar-curso">+ Criar curso</button>
 
       </header>
    )

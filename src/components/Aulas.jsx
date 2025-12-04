@@ -1,7 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Header from "./Header";
-import ListaDeCursos from "./ListaDeCursos";
 import { TicketPlusIcon, EditIcon, Trash2, ChevronsLeft } from "lucide-react";
 import "../styles/Aulas.css";
 import { useNavigate } from "react-router-dom";

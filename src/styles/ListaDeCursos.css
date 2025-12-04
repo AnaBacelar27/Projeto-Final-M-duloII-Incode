@@ -2,7 +2,7 @@ li{
    display: flex;
    margin-bottom: 15px;
    border-radius: 8px;
-   background-color: #131317;
+   background-color: #1C1C1E;
    padding: 15px;
    width: 100%;
 }
@@ -25,20 +25,20 @@ li{
 
 .p-li{
    margin: 10px 0;
-   color: rgb(133, 133, 133);
+   color: #8E8E93;
 }
 
 .status-ativo{
-   background-color: rgba(50, 7, 112, 0.286);
+   background-color: rgba(10, 132, 255, 0.1);
    padding: 4px 16px;
    border-radius: 20px;
    font-size: 15px;
-   color: rgb(123, 19, 235);
+   color: #0A84FF;
 }
 .status-inativo{
    background-color: transparent;
    padding: 4px 16px;
    border-radius: 20px;
    font-size: 15px;
-   color: rgb(165, 165, 165);
+   color: #A5A5A5;
 }

@@ -3,7 +3,7 @@ preto -> #0B0B0D
 Azul -> #0A84FF
 */
 
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,21 +11,21 @@ Azul -> #0A84FF
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-  background-color: #0b0b0d;
+body{
+  background-color: #0B0B0D;
   color: white;
-
+  
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
-div#root {
+div#root{
   width: 50%;
 }
 
-button {
+button{
   background-color: transparent;
   color: white;
   border: none;
