@@ -1,36 +1,41 @@
-import { EditIcon, EyeIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import "../styles/ListaDeCursos.css";
 
-const ListaDeCursos = ({ cursos }) => {
+export default function ListaDeCursos({ cursos, onApagarCurso }) {
+  const navigate = useNavigate();
+
+  function abrirCurso(id) {
+    navigate(`/curso/${id}`);
+  }
+
   return (
     <ul>
       {cursos.map((curso) => (
-        <li key={curso.id}>
-          <section className="conteudo">
-            <header className="header-li">
-              <h2>{curso.titulo}</h2>
-              <p className={curso.status ? "status-ativo" : "status-inativo"}>
-                {(curso.status && "Ativo") || (!curso.status && "Inativo")}
-              </p>
-            </header>
-            <p className="p-li">{curso.descricao}</p>
-            <p className="p-li">{curso.numAulas} aulas</p>
-          </section>
+        <li key={curso.id} onClick={() => abrirCurso(curso.id)}>
+          
+          <div className="conteudo">
 
-          <section className="opcoes">
-            <button>
-              {" "}
-              <EditIcon />{" "}
-            </button>
-            <button>
-              {" "}
-              <EyeIcon />{" "}
-            </button>
-          </section>
+            <div className="titulo-status">
+              <h2>{curso.titulo}</h2>
+
+              <span
+                className={curso.status ? "status-ativo" : "status-inativo"}
+              >
+                {curso.status ? "Ativo" : "Inativo"}
+              </span>
+            </div>
+
+            <p className="p-li">{curso.descricao}</p>
+
+            <p className="p-li">{curso.numAulas} aulas</p>
+          </div>
+
+          <div className="opcoes" onClick={(e) => e.stopPropagation()}>
+            <svg onClick={() => alert("Editar curso")}>&#9998;</svg>
+            <svg onClick={() => onApagarCurso(curso.id)}>&#128465;</svg>
+          </div>
         </li>
       ))}
     </ul>
   );
-};
-
-export default ListaDeCursos;
+}

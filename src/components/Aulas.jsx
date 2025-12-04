@@ -1,101 +1,88 @@
-"use client";
-import { useEffect, useState } from "react";
-import { TicketPlusIcon, EditIcon, Trash2, ChevronsLeft } from "lucide-react";
-import "../styles/Aulas.css";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import AddAulaModal from "./AddClasses";
+import "../styles/Classes.css";
+import { SquarePen, Trash2 } from "lucide-react";
 
-function Aulas() {
-  const [aulas, setAulas] = useState({
-    id: 1,
-    nome: "Fund React",
-    descricao: "Aprenda os conceitos básicos do React e construa aplicações",
-    aulas: [
-      {
-        id: 1,
-        nome: "Aula1",
-        duracao: 30,
-      },
-    ],
-  });
+export default function Aulas() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await fetch(
-        "https://projeto-final-att.onrender.com/aulas"
-      );
+  const [aulas, setAulas] = useState([
+    { id: 1, titulo: "Introdução ao React", duracao: "30 minutos" },
+    { id: 2, titulo: "Componentes e Props", duracao: "45 minutos" },
+    { id: 3, titulo: "Estado e Ciclo de Vida", duracao: "60 minutos" },
+  ]);
 
-      const response = result.json();
+  const [aulaEditando, setAulaEditando] = useState(null);
 
-      console.log(response);
-      // setAulas(response)
-    };
-
-    fetchData();
-  }, []);
-
-  function excluirAula(id) {
-    setAulas(
-      aulas.aulas.filter(function (aulas) {
-        return aulas.id !== id;
-      })
-    );
+  function removerAula(id) {
+    const filtradas = aulas.filter((aula) => aula.id !== id);
+    setAulas(filtradas);
   }
 
-  const navigate = useNavigate();
+  function editarAula(aula) {
+    setAulaEditando(aula); 
+    setIsModalOpen(true); 
+  }
 
-  function voltarCurso() {
-    navigate("/");
+  function salvarAula(aula) {
+    if (aula.id) {
+      setAulas((prev) =>
+        prev.map((a) => (a.id === aula.id ? aula : a))
+      );
+    } else {
+      aula.id = Date.now();
+      setAulas((prev) => [...prev, aula]);
+    }
+
+    setIsModalOpen(false);
+    setAulaEditando(null);
   }
 
   return (
-    <div className="box">
-      <nav>
-        {" "}
-        <button id="btnVoltar" onClick={voltarCurso}>
-          <ChevronsLeft /> Voltar para o curso
-        </button>{" "}
-      </nav>
-      <div className="mains">
-        <section className="infoCurso">
-          <h1 className="titulos">{aulas.nome} </h1>
-          <p className="txt_btn">Ativo</p>
-          <p className="txt">{aulas.descricao}</p>
-        </section>
-
-        <section className="Aulas">
-          <h2 className="titulos">Aulas</h2>
-          <button id="btnAdd">+ Adicionar Aula</button>
-        </section>
-
-        <section className="listaAulas">
-          <ul>
-            {aulas.aulas.map((aula) => (
-              <li key={aula.id} className="itens">
-                <div>
-                  <h3 className="titulos">{aula.nome}</h3>
-                  <p>{aula.duracao}</p>
-                </div>
-                <section className="opc">
-                  <button>
-                    {" "}
-                    <EditIcon />{" "}
-                  </button>
-                  <button
-                    onClick={() => {
-                      excluirAula(aula.id);
-                    }}
-                  >
-                    {" "}
-                    <Trash2 />{" "}
-                  </button>
-                </section>
-              </li>
-            ))}
-          </ul>
-        </section>
+    <div className="curso-detalhes-container">
+      <div className="curso-header">
+        <h2>Fundamentos de React</h2>
+        <p>Aprenda os conceitos básicos do React e construa aplicações modernas.</p>
       </div>
+
+      <button className="btn-azul" onClick={() => {
+        setAulaEditando(null); 
+        setIsModalOpen(true);
+      }}>
+        + Adicionar Aula
+      </button>
+
+      <div className="aulas-container">
+        <h3>Aulas</h3>
+
+        {aulas.map((aula) => (
+          <div key={aula.id} className="aula-card">
+            <div className="aula-info">
+              <span className="titulo">{aula.titulo}</span>
+              <span className="duracao">{aula.duracao}</span>
+            </div>
+
+            <div className="aula-actions">
+              <button className="icon-btn" onClick={() => editarAula(aula)}>
+                <SquarePen color="white" size={18} />
+              </button>
+
+              <button className="icon-btn" onClick={() => removerAula(aula.id)}>
+                <Trash2 color="white" size={18} />
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {isModalOpen && (
+        <AddAulaModal
+          curso="Fundamentos de React"
+          onClose={() => setIsModalOpen(false)}
+          onSave={salvarAula}
+          aula={aulaEditando}
+        />
+      )}
     </div>
   );
 }
-
-export default Aulas;

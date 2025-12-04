@@ -1,0 +1,101 @@
+
+.curso-detalhes-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.curso-header {
+  background: #1c1c1e;
+  padding: 22px;
+  border-radius: 10px;
+  margin-bottom: 26px;
+}
+
+.curso-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.curso-header p {
+  color: #bdbdbd;
+  font-size: 14px;
+}
+
+.btn-azul {
+  background: #3b82f6;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+  float: right;
+}
+
+.btn-azul:hover {
+  background: #2563eb;
+}
+
+.aulas-container {
+  margin-top: 60px;
+}
+
+.aulas-container h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.aula-card {
+  background: #1c1c1e;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.2s;
+}
+
+.aula-card:hover {
+  background: #262628;
+}
+
+.aula-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.aula-info .titulo {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.aula-info .duracao {
+  font-size: 13px;
+  color: #b5b5b5;
+}
+
+.aula-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-btn {
+  background: #2a2a2d;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.icon-btn:hover {
+  background: #3a3a3d;
+}
