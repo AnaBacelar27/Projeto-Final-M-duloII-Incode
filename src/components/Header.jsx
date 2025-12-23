@@ -1,11 +1,9 @@
-import "../styles/Header.css"
-
 const Header = () => {
    return(
       <header className="header">
          
       <h1>Curso</h1>
-      <button className="btn-criar-curso">+ Criar curso</button>
+      <button className="btn-criar-curso"> + Criar curso </button>
 
       </header>
    )

@@ -1,5 +1,4 @@
 import { EditIcon, EyeIcon } from 'lucide-react'
-import "../styles/ListaDeCursos.css"
 
 const ListaDeCursos = ({cursos}) => {
 

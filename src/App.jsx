@@ -9,7 +9,7 @@ function App() {
       id: 1,
       titulo: "Fundamentos de react",
       descricao: "Aprenda conceitos basicos do react e construa aplicacoes modernas",
-      status: true,
+      status: true, 
       numAulas: 3,
     },
     {

@@ -25,6 +25,75 @@ div#root{
   width: 50%;
 }
 
+.header{  
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 20px;
+   padding: 10px 0;
+}
+
+.conteudo > .header-li{
+   display: flex;
+   gap: 15px;
+}
+
+
+.btn-criar-curso{
+  background-color: #0e6fff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 7px;
+  font-size: 14px;
+}
+.btn-criar-curso:hover{
+   background-color: #0b4193;
+}
+
+li{
+   display: flex;
+   margin-bottom: 15px;
+   border-radius: 8px;
+   background-color: #131317;
+   padding: 15px;
+   width: 100%;
+}
+
+.conteudo{
+   width: 100%;
+}
+
+.opcoes{
+   display: flex;
+   gap: 20px;
+}
+.opcoes svg{
+   transform: translateY(-100%);
+   width: 22px;
+}
+.opcoes svg:hover{
+   color: rgb(144, 144, 144);
+}
+
+.p-li{
+   margin: 10px 0;
+   color: rgb(133, 133, 133);
+}
+
+.status-ativo{
+   background-color: rgba(50, 7, 112, 0.286);
+   padding: 4px 16px;
+   border-radius: 20px;
+   font-size: 15px;
+   color: rgb(123, 19, 235);
+}
+.status-inativo{
+   background-color: transparent;
+   padding: 4px 16px;
+   border-radius: 20px;
+   font-size: 15px;
+   color: rgb(165, 165, 165);
+}
+
 button{
   background-color: transparent;
   color: white;
