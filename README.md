@@ -1,3 +1,25 @@
+# Gerenciador de Cursos e Aulas
+
+Projeto final do Módulo II do curso Incode Tech School (2025.2)
+
+## Funcionalidades
+- Listar cursos e aulas
+- Navegação interativa
+- Interface com React
+
+## Tecnologias
+- React
+- JavaScript
+- HTML
+- CSS
+
+## Como usar
+1. Clone o repositório  
+2. Rode `npm install`  
+3. Rode `npm start`
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
